@@ -1,131 +1,127 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    
-
-<metaname='viewport'content='width=device-width,initial-scale=1.0'>
-<style>
-
-
-#imagem{
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    width: 50px;
-    right: 20px;
-
-}
-#linhasuperior{
-position:fixed;
-top:90px;
-left:10px;
-width:800px;
-right:10px;
-}
-
-#titulo2{
-position:fixed;
-color: hsl(225, 46%, 33%);
-/* text-align: center; */
-top:5px;
-left:230px;
-width:650px;
-right:10px;
-font-size:15px;
-}
-
-#botoes{
-    position:fixed;
-    top:120px;
-    left:10px;
-    
-    width:800px;
-    right:10px;
-}
-
-#descricao{
-position:fixed;
-top:160px;
-word-wrap:break-word;
-color: hsl(225, 2%, 58%);
-
-width:680px;
-text-decoration:none;
-word-wrap:break-word;
-padding:1em0;
-}
-
-
-
-
- </style>
-<title> Pagina Principal</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="App de Estética - Sua Beleza na Palma da Mão">
+    <title>App de Estética - Beleza na Palma da Mão</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #ff69b4;
+            color: white;
+            text-align: center;
+            padding: 2em 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 2em auto;
+        }
+        .intro, .features, .testimonials, .cta {
+            margin: 2em 0;
+            padding: 1em;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .intro h2, .features h2, .testimonials h2, .cta h2 {
+            color: #ff69b4;
+        }
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+        .features li {
+            margin: 1em 0;
+            font-size: 1.1em;
+        }
+        .features li i {
+            margin-right: 10px;
+            color: #ff69b4;
+        }
+        .testimonials {
+            text-align: center;
+        }
+        .testimonials p {
+            font-style: italic;
+        }
+        .cta {
+            text-align: center;
+        }
+        .cta a {
+            display: inline-block;
+            padding: 0.8em 2em;
+            color: white;
+            background-color: #ff69b4;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+        }
+        .cta a:hover {
+            background-color: #e058a0;
+        }
+        .download-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .download-icons a i {
+            font-size: 2em;
+            color: #ff69b4;
+        }
+    </style>
 </head>
+<body>
+    <header>
+        <h1>App de Estética</h1>
+        <p>Sua Beleza na Palma da Mão</p>
+    </header>
 
-<body> 
-    
+    <div class="container">
+        <section class="intro">
+            <h2>Bem-vindo ao App de Estética</h2>
+            <p>Com nosso aplicativo, você pode agendar tratamentos de beleza, consultar profissionais, e acompanhar sua rotina de cuidados de maneira fácil e prática. Experimente o app que transforma sua rotina de beleza!</p>
+        </section>
 
-<div id=linhasuperior>
- <hr size=1px; width=800px; align=center; />
-</div>
-<div id=titulo2>
- <font size='5' face='helvetica'>
- <h3>Meus Projetos°</h3>
- </font>
+        <section class="features">
+            <h2>Funcionalidades do App</h2>
+            <ul>
+                <li><i class="fas fa-calendar-check"></i><strong>Agendamento Fácil:</strong> Marque sessões com profissionais próximos em apenas alguns toques.</li>
+                <li><i class="fas fa-user-md"></i><strong>Consulta com Especialistas:</strong> Fale com especialistas em estética e receba dicas personalizadas.</li>
+                <li><i class="fas fa-heart"></i><strong>Rotina de Beleza:</strong> Acompanhe seu progresso e receba lembretes para cuidar de você.</li>
+                <li><i class="fas fa-bell"></i><strong>Notificações Personalizadas:</strong> Não perca nenhuma atualização e promoções exclusivas.</li>
+                <li><i class="fas fa-gift"></i><strong>Ofertas Exclusivas:</strong> Receba descontos e promoções especiais diretamente no app.</li>
+            </ul>
+        </section>
 
-</div>
+        <section class="testimonials">
+            <h2>Depoimentos de Usuários</h2>
+            <p>"O app transformou minha rotina de beleza! Consigo agendar tudo com muita facilidade." – <strong>Ana Souza</strong></p>
+            <p>"Adoro as dicas dos especialistas. É como ter um salão de beleza sempre por perto." – <strong>Mariana Ferreira</strong></p>
+        </section>
 
-<div id="imagem">
-        <img src="iconen-40.png" />
-
-</div>
-<div id=descricao>
-
-
- <pre><font size='2' face='helvetica'> 
-    11/05/2023 realizado teste ok 
-    Este aplicativo foi desenvolvido para facilitar a sua rotina.
-    Permitindo ter em mãos todos os seus clientes em uma agenda incrível.
-
-    <ol>Este aplicativo é composto pelos itens abaixo.
-        <i>Agenda,</i>
-        <i>Prontuário Eletrônico do Paciente,</i> 
-        <i>Cadastro de paciente,</i>
-        <i>Anamnese,</i>
-        <i>Diagnósticos,</i>
-        <i>Anotações,</i>
-        <i>Alergias,</i>
-        <i>Encaminhamentos,</i>
-        <i>Dashboard.</i>
-        <i></i>
-    </ol>
-    
-   
-
-     </font>
-    
-    </pre>
-    <div id="botoes">
-
-
-
-        <a href="https://forappmobile.github.io"><button style="background: #204786; border-radius: 6px; padding: 10px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Home</button></a>
-        <a href="https://forappmobile.github.io/suporte.html"><button style="background: #e2e4e8; border-radius: 6px; padding: 10px; cursor: pointer; cursor: pointer; color: rgb(48, 16, 106); border: cadetblue;  font-size: 16px;">Suporte</button></a>
-        <a href="https://forappmobile.github.io/dicas.html"><button style="background: #e2e4e8; border-radius: 6px; padding: 10px; cursor: pointer; cursor: pointer; color: rgb(48, 16, 106); border: cadetblue;  font-size: 16px;">Dicas</button></a>
-        <a href="https://forappmobile.github.io/sugestao.html"><button style="background: #e2e4e8; border-radius: 6px; padding: 10px; cursor: pointer; color: rgb(48, 16, 106); border: cadetblue; font-size: 16px;">Sugestões</button></a>
-
-    </div>  
-
-    
-</div>
-
-
-
-
-
-    
+        <section class="cta">
+            <h2>Baixe Agora</h2>
+            <p>Desfrute de uma experiência personalizada de cuidados estéticos. Baixe o app e comece sua jornada de beleza agora mesmo!</p>
+            <a href="#">Baixar App</a>
+            <div class="download-icons">
+                <a href="#" aria-label="Baixar no Google Play"><i class="fab fa-google-play"></i></a>
+                <a href="#" aria-label="Baixar na App Store"><i class="fab fa-apple"></i></a>
+            </div>
+        </section>
+    </div>
 </body>
-
 </html>

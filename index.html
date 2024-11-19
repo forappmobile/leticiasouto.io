@@ -1,236 +1,131 @@
-var body: some View{
-        
-        HStack{
-            VStack{
-                
-                HStack{
-                    Button(action: {
-                        print("click")
-                        salvarCartao(numCartao: numCartao, melhorDia: melhorDia, dataInicio: dataInicio, validade: validade, nomeTitular: nomeTitular)
-                    }){
-                        Image(systemName: "rectangle.stack.badge.plus")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                    }
-                    .padding()
-                    Spacer()
-                }
-                //Spacer()
-                .padding()
-                
-                VStack{
-                    HStack{
-                        Image(systemName: "creditcard.fill")
-                            .foregroundColor(.cyan)
-                        //.shadow(color: .gray, radius: 10)
-                        Spacer()
-                        
-                    }
-                    .padding()
-                    
-                    HStack{
-                        TextField("Numero Cartão", text: $numCartao)
-                            .textFieldStyle(.roundedBorder)
-                            .padding()
-                        TextField("Dia", text: $melhorDia)
-                            .textFieldStyle(.roundedBorder)
-                        
-                            .padding()
-                        
-                        
-                        
-                    }
-                    HStack{
-                        TextField("Since", text: $dataInicio)
-                            .textFieldStyle(.roundedBorder)
-                            .padding()
-                        
-                        TextField("Validade", text: $validade)
-                            .textFieldStyle(.roundedBorder)
-                            .padding()
-                        
-                    }
-                    HStack{
-                        TextField("Nome titular", text: $nomeTitular)
-                            .textFieldStyle(.roundedBorder)
-                            .padding()
-                        
-                        
-                        
-                    }
-                    
-                }
-                .frame(width: 450, height: 250)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.gray, lineWidth: 1)
-                    // .shadow(color: .gray, radius: 5)
-                )
-                
-                
-                Spacer()
-                
-                
-                
-                
-            }
-            
-            
-            Spacer()
-                .frame(width: .infinity, alignment: .leading)
-            
-            
-        }
-        
-        VStack{
-            HStack{
-                ScrollView(.horizontal) {
-                    HStack(spacing: 16) {
-                        ForEach(0..<listaCartao.count, id: \.self) { itens in
-                            let item = listaCartao[itens]
-                            
-                            VStack {
-                                HStack(alignment: .firstTextBaseline){
-                                    Image(systemName: "creditcard.fill")
-                                        .resizable()
-                                        .frame(width: 25, height: 20)
-                                        .foregroundColor(.cyan)
-                                        .padding(.horizontal)
-                                    Spacer()
-                                }
-                                VStack{
-                                    HStack{
-                                        Text("\(item.numero)")
-                                            .fontWeight(.bold)
-                                            .padding()
-                                        Spacer()
-                                    }
-                                    //.padding()
-                                    HStack{
-                                        Text("\(item.dataLiberado)")
-                                        Spacer()
-                                        Text("\(item.MelhorDataCompra)")
-                                            .padding(.horizontal)
-                                        
-                                        Spacer()
-                                    }
-                                    .padding()
-                                    HStack{
-                                        Text("\(item.nome)")
-                                        
-                                        Spacer()
-                                    }
-                                    .padding()
-                                }
-                                .frame(alignment: .leading)
-                                
-                                .onTapGesture {
-                                    print("linha selecionada \(item.sequencia)")
-                                    
-                                    carregarComprasCartao()
-                                }
-                            }
-                            
-                            .frame(width: 300, height: 200, alignment: .leading)
-                            .background(Color.gray.opacity(0.1))
-                            .cornerRadius(10)
-                            
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(lineWidth: 1)
-                                    .foregroundColor(Color.gray.opacity(0.1))
-                            )
-                            
-                            
-                            
-                            
-                        }
-                    }
-                    .frame(alignment: .leading)
-                    .padding()
-                    Spacer()
-                }
-                
-            }
-        }
-        VStack{
-            List {
-                VStack(spacing: 16) {
-                    ForEach(0..<listaDadosCartao.count, id: \.self) { itens in
-                        let item = listaDadosCartao[itens]
-                        
-                        VStack {
-                            
-                            VStack{
-                                HStack{
-                                    Text("\(item.numero)")
-                                        .fontWeight(.bold)
-                                        .padding()
-                                    Spacer()
-                                }
-                                //.padding()
-                                //.padding()
-                                HStack{
-                                    Text("\(item.dataLiberado)")
-                                    Spacer()
-                                    Text("\(item.MelhorDataCompra)")
-                                        .padding(.horizontal)
-                                    
-                                    Spacer()
-                                }
-                                .padding()
-                                HStack{
-                                    Text("\(item.nome)")
-                                    
-                                    Spacer()
-                                }
-                                .padding()
-                            }
-                            .frame(alignment: .leading)
-                            
-                            .onTapGesture {
-                                print("linha selecionada \(item.sequencia)")
-                            }
-                        }
-                        
-                        .frame(width: 300, height: 200, alignment: .leading)
-                        //  .background(Color.gray.opacity(0.1))
-                        .cornerRadius(10)
-                        
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(lineWidth: 1)
-                                .foregroundColor(Color.gray.opacity(0.1))
-                        )
-                        
-                        
-                        
-                        
-                    }
-                }
-                .frame(alignment: .leading)
-                .padding()
-                Spacer()
-            }
-            
-        }
-        Spacer()
-            .onAppear(){
-                
-                print("tela cartoes ")
-                carregarCartoes()
-                //carregarComprasCartao()
-                
-            }
-            .navigationTitle(titulo)
-        
-        
-            .background(
-                LinearGradient(
-                    gradient: Gradient(colors: [cor1, cor2]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-            )
-        
-    }
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    
+
+<metaname='viewport'content='width=device-width,initial-scale=1.0'>
+<style>
+
+
+#imagem{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    right: 20px;
+
+}
+#linhasuperior{
+position:fixed;
+top:90px;
+left:10px;
+width:800px;
+right:10px;
+}
+
+#titulo2{
+position:fixed;
+color: hsl(225, 46%, 33%);
+/* text-align: center; */
+top:5px;
+left:230px;
+width:650px;
+right:10px;
+font-size:15px;
+}
+
+#botoes{
+    position:fixed;
+    top:120px;
+    left:10px;
+    
+    width:800px;
+    right:10px;
+}
+
+#descricao{
+position:fixed;
+top:160px;
+word-wrap:break-word;
+color: hsl(225, 2%, 58%);
+
+width:680px;
+text-decoration:none;
+word-wrap:break-word;
+padding:1em0;
+}
+
+
+
+
+ </style>
+<title> Pagina Principal</title>
+
+</head>
+
+<body> 
+    
+
+<div id=linhasuperior>
+ <hr size=1px; width=800px; align=center; />
+</div>
+<div id=titulo2>
+ <font size='5' face='helvetica'>
+ <h3>Meus Projetos°</h3>
+ </font>
+
+</div>
+
+<div id="imagem">
+        <img src="iconen-40.png" />
+
+</div>
+<div id=descricao>
+
+
+ <pre><font size='2' face='helvetica'> 
+    11/05/2023 realizado teste ok 
+    Este aplicativo foi desenvolvido para facilitar a sua rotina.
+    Permitindo ter em mãos todos os seus clientes em uma agenda incrível.
+
+    <ol>Este aplicativo é composto pelos itens abaixo.
+        <i>Agenda,</i>
+        <i>Prontuário Eletrônico do Paciente,</i> 
+        <i>Cadastro de paciente,</i>
+        <i>Anamnese,</i>
+        <i>Diagnósticos,</i>
+        <i>Anotações,</i>
+        <i>Alergias,</i>
+        <i>Encaminhamentos,</i>
+        <i>Dashboard.</i>
+        <i></i>
+    </ol>
+    
+   
+
+     </font>
+    
+    </pre>
+    <div id="botoes">
+
+
+
+        <a href="https://forappmobile.github.io"><button style="background: #204786; border-radius: 6px; padding: 10px; cursor: pointer; color: #fff; border: none; font-size: 16px;">Home</button></a>
+        <a href="https://forappmobile.github.io/suporte.html"><button style="background: #e2e4e8; border-radius: 6px; padding: 10px; cursor: pointer; cursor: pointer; color: rgb(48, 16, 106); border: cadetblue;  font-size: 16px;">Suporte</button></a>
+        <a href="https://forappmobile.github.io/dicas.html"><button style="background: #e2e4e8; border-radius: 6px; padding: 10px; cursor: pointer; cursor: pointer; color: rgb(48, 16, 106); border: cadetblue;  font-size: 16px;">Dicas</button></a>
+        <a href="https://forappmobile.github.io/sugestao.html"><button style="background: #e2e4e8; border-radius: 6px; padding: 10px; cursor: pointer; color: rgb(48, 16, 106); border: cadetblue; font-size: 16px;">Sugestões</button></a>
+
+    </div>  
+
+    
+</div>
+
+
+
+
+
+    
+</body>
+
+</html>
